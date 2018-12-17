@@ -6,7 +6,26 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
-    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd /popper.min.js') 
-    script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js') 
+     nav.navbar.fixed-top.navbar-expand-md
+        .container             
+            a.navbar-brand(href='/') Loc8r             
+            button.navbar-toggler.navbar-toggler-left(type='button', datatoggle='collapse', data-target='#navbarMain')
+                span.navbar-toggler-icon            
+            #navbarMain.navbar-collapse.collapse
+                ul.navbar-nav.mr-auto                   
+                    li.nav-item                       
+                        a.nav-link(href='/about/') About 
+ 
+     .container.content        
+       block content 
+ 
+        footer             
+            .row                 
+                .col-12                     
+                    small &copy; Getting MEAN – Simon Holmes/Clive Harber 2018 
+        
+     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
+     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd /popper.min.js') 
+     script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js') 
+    
+    
