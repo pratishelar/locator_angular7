@@ -3,7 +3,7 @@ const apiOptions = {
   server : 'http://localhost:3000'
 };
 if (process.env.NODE_ENV === 'production') {
-  apiOptions.server = 'https://pure-temple-67771.herokuapp.com';
+  apiOptions.server = 'https://still-woodland-77180.herokuapp.com';
 }
 
 // PUBLIC EXPOSED METHODS
