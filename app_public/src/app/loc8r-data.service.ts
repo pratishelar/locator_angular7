@@ -10,7 +10,7 @@ export class Loc8rDataService {
 
 constructor(private http: HttpClient) { }
 
-  private apiBaseUrl = '/api';
+  private apiBaseUrl = 'http://localhost:3000/api';
 
   public getLocations(lat: number, lng: number): Promise<Location[]> {
     const maxDistance: number = 2000;
