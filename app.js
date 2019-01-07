@@ -12,9 +12,6 @@ const  apiRoutes = require('./app_api/routes/index');
 const  app = express();
 
 
-
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'))
 app.set('view engine', 'pug');
@@ -28,19 +25,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_public', 'build')));
 
 
-
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 app.use('/api', apiRoutes);
 app.get('*', function(req, res, next) {   
     res.sendFile(path.join(__dirname, 'app_public', 'build', 'index.html'));
 });
-app.use('/api',function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", '*');
-    res.header("Access-Control-Allow-Credentials", true);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-    next();
+
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+var server = app.listen(3000, function () {
+
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+
 });
 
 // catch 404 and forward to error handler
