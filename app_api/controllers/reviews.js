@@ -214,7 +214,11 @@ const _doAddReview = function(req, res, location) {
         "message": "locationid not found"
       });
   } else {
-    location.reviews.push({
+      console.log("location", location);
+      console.log("req.body.author", req.body.author);
+      console.log("req.body.rating", req.body.rating);
+      console.log("req.body.reviewText", req.body.reviewText);
+    location.reviews.unshift({
       author: req.body.author,
       rating: req.body.rating,
       reviewText: req.body.reviewText

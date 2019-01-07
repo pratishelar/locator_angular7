@@ -6,6 +6,7 @@ html
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    base(href="/")
   body
     nav.navbar.fixed-top.navbar-toggleable-md.navbar-inverse
       .container
@@ -26,3 +27,4 @@ html
     script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
     script(src='/javascripts/bootstrap.min.js')
     script(src='/javascripts/validation.js')
+    block scripts
